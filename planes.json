@@ -1,23 +1,121 @@
 [
   {
-    "id": "STR-0001",
-    "model": "Стрела-1 · Классическая",
-    "production_date": "2026-09-01",
-    "owner": "Демонстрационная запись",
-    "status": "На хранении"
+    "id": "0101",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
   },
   {
-    "id": "STR-0002",
-    "model": "Стрела-2 · Дальний полёт",
-    "production_date": "2026-09-14",
-    "owner": "Демонстрационная запись",
-    "status": "В эксплуатации"
+    "id": "0102",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
   },
   {
-    "id": "STR-0003",
-    "model": "Стрела-3 · Манёвренная",
-    "production_date": "2026-10-02",
-    "owner": "Демонстрационная запись",
-    "status": "На ремонте"
+    "id": "0103",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0104",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0105",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0106",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0107",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0108",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0109",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0110",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0111",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0112",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0113",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0114",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0115",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0116",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
+  },
+  {
+    "id": "0117",
+    "model": "3B",
+    "production_date": "2026-10-15",
+    "owner": "Картель",
+    "status": "НА СКЛАДЕ"
   }
 ]
