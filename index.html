@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101a2b">
+<title>СТРЕЛА · Реестр самолётов</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--panel:#111d30;--line:#263750;--muted:#94a8c3;--text:#f3f7ff;--accent:#80f0c0;--blue:#79a9ff}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 80% 0%,#203754 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{width:min(100% - 36px,920px);margin:0 auto;padding:34px 0 50px}.top{display:flex;align-items:center;gap:12px;margin-bottom:52px}.logo{width:44px;height:44px;border:1px solid #45627e;background:#162941;border-radius:14px;display:grid;place-items:center;color:var(--accent)}.logo svg{width:26px}.brand{font-size:13px;letter-spacing:.22em;font-weight:800}.subbrand{font-size:12px;color:var(--muted);letter-spacing:.08em}.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.04;letter-spacing:-.045em;margin:12px 0 16px;max-width:680px}.hero p{color:var(--muted);max-width:580px;margin:0 0 30px}.search{padding:8px;display:flex;gap:8px;background:rgba(17,29,48,.92);border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 70px #0003}.search input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:var(--text);padding:12px 14px;font:inherit}.search input::placeholder{color:#7187a4}.search button{border:0;border-radius:12px;background:var(--accent);color:#0a1b19;font:inherit;font-weight:800;padding:0 23px;cursor:pointer}.search button:hover{filter:brightness(1.07)}.hint{font-size:12px;color:#7187a4;margin:11px 4px 0}.result{margin-top:28px}.empty,.record,.error{border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(19,33,53,.97),rgba(12,22,37,.97));padding:26px}.empty{text-align:center;padding:42px 24px}.empty-icon{font-size:30px;margin-bottom:10px}.empty h2{margin:0 0 8px;font-size:19px}.empty p{margin:0;color:var(--muted);font-size:14px}.record-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-bottom:23px;border-bottom:1px solid var(--line)}.record-kicker{font-size:11px;color:var(--muted);letter-spacing:.16em;font-weight:800}.record-id{font-size:clamp(26px,5vw,38px);font-weight:850;letter-spacing:-.04em;margin:3px 0 0;overflow-wrap:anywhere}.status{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:750;white-space:nowrap;background:#203e38;color:#a3f5d7;border:1px solid #356557}.status:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}.status--archived{background:#30394b;color:#c5d0e2;border-color:#48546a}.status--repair{background:#45351e;color:#ffd28a;border-color:#6b512c}.status--missing{background:#48282e;color:#ffabb4;border-color:#70414a}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}.field{padding:17px;border:1px solid #25364e;border-radius:14px;background:#0c1728}.field-label{font-size:12px;color:var(--muted);margin-bottom:7px}.field-value{font-size:17px;font-weight:700;overflow-wrap:anywhere}.plane-art{margin:24px 0 0;padding:18px;border-radius:14px;background:linear-gradient(115deg,#152d3b,#15243b);color:#b2c7df;display:flex;gap:14px;align-items:center;font-size:13px}.plane-art svg{flex:0 0 40px;width:40px;color:var(--accent)}.plane-art strong{display:block;color:#edf8ff;font-size:14px;margin-bottom:2px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#7085a1;font-size:12px;margin-top:38px;padding-top:18px;border-top:1px solid #1b2a3f}.foot a{color:#9cb8df;text-decoration:none}.foot a:hover{text-decoration:underline}.loading{color:var(--muted);padding:20px 4px}@media(max-width:540px){.wrap{width:min(100% - 24px,920px);padding-top:22px}.top{margin-bottom:38px}.search{flex-direction:column}.search button{padding:13px}.grid{grid-template-columns:1fr}.record{padding:18px}.record-head{flex-direction:column}.status{align-self:flex-start}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top">
+<div class="logo" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M3 14.5 29 3l-8.8 26-4.1-10.2L3 14.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m16.1 18.8 5.3-7.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+<div><div class="brand">СТРЕЛА</div><div class="subbrand">РЕЕСТР БУМАЖНЫХ САМОЛЁТОВ</div></div>
+</header>
+<section class="hero">
+<div class="eyebrow">Единый реестр · самолётная документация</div>
+<h1>У каждого самолёта есть своя история.</h1>
+<p>Введите личный номер бумажного самолёта «Стрела», чтобы найти его модель, дату производства, владельца и текущий статус.</p>
+<form class="search" id="searchForm">
+<input id="planeId" name="planeId" autocomplete="off" spellcheck="false" aria-label="Личный номер самолёта" placeholder="Например, STR-0001" required>
+<button type="submit">Найти самолёт <span aria-hidden="true">↗</span></button>
+</form>
+<div class="hint">Номер можно вводить с любым регистром. Пробелы по краям будут удалены.</div>
+</section>
+<section id="result" class="result" aria-live="polite">
+<div class="empty"><div class="empty-icon">✈</div><h2>Ожидаем номер самолёта</h2><p>Карточка самолёта появится здесь после поиска.</p></div>
+</section>
+<footer class="foot"><span>СТРЕЛА / СИСТЕМА УЧЁТА · 1.0</span><span id="sourceState">Подключение реестра…</span></footer>
+</main>
+<script>
+const result = document.getElementById('result');
+const form = document.getElementById('searchForm');
+const input = document.getElementById('planeId');
+const sourceState = document.getElementById('sourceState');
+let planes = [];
+const statusClass = status => {
+  const s = String(status).toLocaleLowerCase('ru-RU');
+  if (s.includes('ремонт')) return 'status--repair';
+  if (s.includes('архив') || s.includes('списан')) return 'status--archived';
+  if (s.includes('утерян') || s.includes('потерян')) return 'status--missing';
+  return '';
+};
+function escapeHtml(value) {
+  return String(value ?? 'Не указано').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+function showEmpty(title, description, icon='✈') {
+  result.innerHTML = '<div class="empty"><div class="empty-icon">'+icon+'</div><h2>'+escapeHtml(title)+'</h2><p>'+escapeHtml(description)+'</p></div>';
+}
+function findPlane(id) {
+  const normalized = id.trim().toLocaleUpperCase('ru-RU');
+  return planes.find(p => String(p.id ?? p.personal_number ?? '').trim().toLocaleUpperCase('ru-RU') === normalized);
+}
+function renderPlane(p) {
+  const id = p.id ?? p.personal_number;
+  const status = p.status ?? 'Не указан';
+  result.innerHTML = '<article class="record"><div class="record-head"><div><div class="record-kicker">КАРТОЧКА САМОЛЁТА</div><div class="record-id">'+escapeHtml(id)+'</div></div><div class="status '+statusClass(status)+'">'+escapeHtml(status)+'</div></div><div class="grid"><div class="field"><div class="field-label">Модель</div><div class="field-value">'+escapeHtml(p.model)+'</div></div><div class="field"><div class="field-label">Дата производства</div><div class="field-value">'+escapeHtml(p.production_date ?? p.manufactured_at)+'</div></div><div class="field"><div class="field-label">Владелец</div><div class="field-value">'+escapeHtml(p.owner)+'</div></div><div class="field"><div class="field-label">Личный номер</div><div class="field-value">'+escapeHtml(id)+'</div></div></div><div class="plane-art"><svg viewBox="0 0 40 40" fill="none"><path d="M3 18 37 4 25 36l-6-12L3 18Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m19 24 8-10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><div><strong>Запись найдена в реестре</strong>Данные загружены из файла planes.json этого репозитория.</div></div></article>';
+}
+async function loadRegistry() {
+  try {
+    const response = await fetch('./planes.json', {cache:'no-store'});
+    if (!response.ok) throw new Error('HTTP '+response.status);
+    const data = await response.json();
+    planes = Array.isArray(data) ? data : data.planes;
+    if (!Array.isArray(planes)) throw new Error('Ожидался массив самолётов');
+    sourceState.textContent = 'Реестр загружен · записей: '+planes.length;
+    const urlId = new URLSearchParams(location.search).get('id');
+    if (urlId) { input.value = urlId; search(urlId); }
+  } catch (error) {
+    sourceState.textContent = 'Не удалось загрузить реестр';
+    showEmpty('Реестр недоступен', 'Проверьте, что файл planes.json опубликован рядом с index.html и сайт открыт через веб-сервер.', '!');
+  }
+}
+function search(value) {
+  if (!planes.length) { showEmpty('Реестр ещё не загружен', 'Подождите немного и повторите поиск.'); return; }
+  if (!value.trim()) { showEmpty('Введите личный номер', 'Номер указан на карточке самолёта.'); return; }
+  const plane = findPlane(value);
+  if (plane) renderPlane(plane);
+  else showEmpty('Самолёт не найден', 'Проверьте личный номер или убедитесь, что запись добавлена в реестр.', '⌕');
+}
+form.addEventListener('submit', event => { event.preventDefault(); search(input.value); const url = new URL(location.href); url.searchParams.set('id', input.value.trim()); history.replaceState({}, '', url); });
+loadRegistry();
+</script>
+</body>
+</html>
